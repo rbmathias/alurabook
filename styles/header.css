@@ -1,0 +1,182 @@
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburguer {
+    background-image: url("../img/Menu\ Aberto.svg");
+}
+
+.container__botao:checked ~ .container__rotulo {
+    background: var(--azul-degrade);
+}
+
+.container__rotulo {
+    padding: 1em 0.5em;
+}
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 0.5em;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem {
+    padding: 0.5vw 0.2vw;
+    margin: 0 0.2vw 0 0.2vw;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 70vw;
+}
+
+.container__botao:checked~.lista-menu {
+    display: block;
+}
+
+.container__botao {
+    display: none;
+}
+
+.lista-menu__titulo,
+.lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.container__titulo,
+.opcoes, 
+.container__texto {
+    display: none;
+}
+
+/* TABLET */
+@media screen and (min-width: 1024px) {
+    .container__titulo, 
+    .container__titulo--negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo {
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item {
+        color: var(--branco);
+        background: var(--azul-degrade);
+    }
+    
+    .opcoes__item {
+        padding: 2.4em 1em;
+    }
+
+    .opcoes__item:hover {
+        color: var(--branco);
+        background: var(--azul-degrade);
+    }
+
+    .container__imagem-favoritos, 
+    .cabecalho__menu-hamburguer, 
+    .opcoes__botao {
+        display: none;
+    }
+
+    .container__imagem {
+        padding: 0.5em 1em;
+    }
+
+    .container__texto {
+        padding: 1.8em 1em;
+    }
+
+    .container__texto:hover {
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .container__logo {
+        padding-left: 40px;
+    }
+
+    .container__link {
+        margin-right: 2vw;
+    }
+
+    .opcoes__botao:checked ~ .lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    .lista-menu__item:hover {
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover>.lista-menu__link {
+        -webkit-text-fill-color: var(--branco);
+    }
+
+}
+
+/* TELA */
+@media screen and (min-width: 1728px) {
+    .container__link {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        margin-right: 5vw;
+    }    
+
+    .container__imagem {
+        padding: 1em 0.5em;
+    }
+
+    .container__texto {
+        display: block;
+    }
+    
+    .container__logo {
+        padding-left: 3vw;
+    }
+
+    .opcoes {
+        margin: 0 auto 0 2em;
+    }
+}
